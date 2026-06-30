@@ -373,6 +373,11 @@ app.get("/", (req, res) => {
                     <span class="path">/hostname</span>
                     <span class="desc">Pod hostname</span>
                 </a>
+                <a class="endpoint" href="/error">
+                    <span class="method">GET</span>
+                    <span class="path">/error</span>
+                    <span class="desc">Simulate error</span>
+                </a>
             </div>
         </div>
 
@@ -485,4 +490,8 @@ app.listen(PORT, () => {
 
     console.log(`Application started on port ${PORT}`);
 
+});
+
+app.get("/error", (req, res) => {
+    process.exit(1); // Simulate an error by exiting the process
 });
